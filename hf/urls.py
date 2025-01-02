@@ -14,9 +14,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from sesame.views import LoginView
+
+import util
+from util.views import EmailLoginView
 
 urlpatterns = [
+    path("accounts/", include("django.contrib.auth.urls")),
     path("admin/", admin.site.urls),
+    path("profile/", util.views.profile, name="profile"),
+    path("login/", EmailLoginView.as_view(), name="sesame-login"),
+    path("login/auth/", LoginView.as_view(), name="sesame-login-auth"),
 ]

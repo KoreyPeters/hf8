@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "util.apps.UtilConfig",
+    "polium.apps.PoliumConfig",
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,16 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
+##########
+
+AUTH_USER_MODEL = "util.HfUser"
+
+SESAME_MAX_AGE = 60 * 10
+LOGIN_REDIRECT_URL = "/profile/"  # Test only. Change later to /profile
+LOGOUT_REDIRECT_URL = "/"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "sesame.backends.ModelBackend",
+]
