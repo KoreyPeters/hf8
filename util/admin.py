@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from util.models import HfUser, Category, Criterion
+
+
+admin.site.register(HfUser)
+admin.site.register(Category)
+admin.site.register(Criterion)

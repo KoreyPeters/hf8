@@ -1,0 +1,12 @@
+{% extends "polium/app_base.html" %}
+
+{%block extra_title%}{{block.super}} | Elections | {{election}}{%endblock%}
+
+{%block breadcrumbs%}
+{{block.super}} / <a href="{% url 'polium_elections_list' %}">elections</a> /
+{{election}}
+{%endblock%}
+
+{%block content%}
+<h1>{{election}}</h1>
+{%endblock%}

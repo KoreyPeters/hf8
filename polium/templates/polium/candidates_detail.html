@@ -1,0 +1,9 @@
+{% extends "polium/app_base.html" %}
+
+{% block extra_title %}{{ block.super }} | Candidates | {{candidate.politician}}{% endblock %}
+
+{% block content %}
+<h1>Candidates | {{candidate.election}} | {{candidate.politician}}</h1>
+<p>{{candidate.politician}} is running for election in <a
+        href="{{candidate.election.get_absolute_url}}">{{candidate.election}}</a>.</p>
+{% endblock %}

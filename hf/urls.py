@@ -28,4 +28,5 @@ urlpatterns = [
     path("profile/", util.views.profile, name="profile"),
     path("login/", EmailLoginView.as_view(), name="sesame-login"),
     path("login/auth/", LoginView.as_view(), name="sesame-login-auth"),
+    path("polium/", include("polium.urls"), name="polium")
 ]

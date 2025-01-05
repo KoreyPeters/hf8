@@ -1,0 +1,33 @@
+{% extends "polium/app_base.html" %}
+
+{% block extra_title %}{{ block.super }} | Elections{% endblock %}
+
+{%block breadcrumbs%}
+{{block.super}} / elections
+{%endblock%}
+
+{% block content %}
+<h1>Elections</h1>
+<p>Please select an election</p>
+
+{% if elections %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for election in elections %}
+        <tr scope="row">
+            <td><a href="{{election.get_absolute_url}}">{{election.name}}</a></td>
+            <td>{{election.date}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No candidates have been configured. Please contact the site admin.</p>
+{% endif %}
+{% endblock %}
