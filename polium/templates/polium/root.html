@@ -1,0 +1,37 @@
+{% extends "polium/app_base.html" %}
+
+{% block extra_title %}{{ block.super }}{% endblock %}
+
+{% block content %}
+<h1>Welcome to Polium</h1>
+<p class="lead">Polium is a game you can play in real life that encourages politicians to enact policies which meet the
+    goals of HF
+    and
+    human flourishing.</p>
+<h2>The Polium gameplay loop</h2>
+<p>The concepts of Polium are similar to all HF games.
+<ol>
+    <li>Politicians are registered with the Polium system.</li>
+    <li>HF players evaluate each politician according to HF's criteria, giving the politician a rating for how much they
+        can be expected to promote human flourishing.</li>
+    <li>HF players are rewarded for voting for politicians with high HF ratings.</li>
+</ol>
+</p>
+<h2>Get Involved</h2>
+<p>Polium also gives its players points for performing other activities that help bring about human flourishing.</p>
+<p>The full list of Polium activities is as follows:
+<ol>
+    <li>Rate a politician. This is done from the politicians page.</li>
+    <li>Intent to vote. This can be from the election page by anyone with legal standing to vote in that
+        election. It is a commitment to vote for the candidate whose Polium rating is highest.</li>
+    <li>Voted. This is final proof that you voted in the election for the candidate whose rating was highest at the time
+        of the election.</li>
+</ol>
+</p>
+<p>Other activities may be added as the platform matures.</p>
+<h2>Important links</h2>
+<p><a href="{% url 'polium_candidates_list' %}">See a list of all candidates here.</a></p>
+<p>
+    <a href="{% url 'polium_elections_list' %}">See a list of all elections here.</a>
+</p>
+{% endblock %}

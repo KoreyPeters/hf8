@@ -2,10 +2,10 @@
 {% block extra_title %}{{ block.super }} | Polium{% endblock %}
 
 {% block app_content %}
-{% block breadcrumbs %}<a href="/polium">polium</a>{% endblock %}
 <div class="container">
+    {% block breadcrumbs %}<a href="/polium">polium</a>{% endblock %}
     {% block content %}
     {% endblock %}
 </div>
+{% include "util/logout.html" %}
 {% endblock %}
-arstarst
