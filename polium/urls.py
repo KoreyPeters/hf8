@@ -19,4 +19,9 @@ urlpatterns = [
         views.politicians_detail,
         name="polium_politicians_detail",
     ),
+    path(
+        "politicians/<str:sqid>/survey",
+        views.politicians_detail_survey,
+        name="polium_politicians_detail_survey",
+    ),
 ]

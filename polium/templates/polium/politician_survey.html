@@ -1,0 +1,15 @@
+{% extends "polium/app_base.html" %}
+
+{% block extra_title %}{{ block.super }} | Politician | {{politician}} | Survey{% endblock %}
+
+{% block content %}
+<h1>Politician | {{politican}} | Survey</h1>
+<p>This is your opportunity to determine how likely a specific politician is to vote for policy that supports HF's human
+    flourishing goals.</p>
+<p>This survey is for {{politician}}. For each of the criteria presented below, please evaluate how likely
+    {{politician}} is to support this specific criteria. Your results will be totalled together to give your
+    final rating for this politician. This final rating will be averaged with all of the other surveys received for this
+    politician to create their final HF score. Politicians with higher scores are considered more likely to vote for or
+    support policies that will bring about human flourishing. In other words, high scores are better.</p>
+    {%include "util/survey.html"%}
+{% endblock %}

@@ -4,6 +4,21 @@
 
 {% block content %}
 <h1>Candidates | {{candidate.election}} | {{candidate.politician}}</h1>
-<p>{{candidate.politician}} is running for election in <a
-        href="{{candidate.election.get_absolute_url}}">{{candidate.election}}</a>.</p>
+
+<h2>Rating</h2>
+
+<h2>Survey</h2>
+{%if survey%}
+{%else%}
+<p>You have not surveyed this politician. Your evaluation of this politician according to HF criteria is critical to
+        make the Polium game work. Please take a few moments now to make your voice heard.</p>
+<p><a href="{% url 'polium_politicians_detail_survey' sqid=candidate.sqid %}">Take survey here</a></p>
+{%endif%}
+
+<h2>Politician details</h2>
+
+<h2>Election details</h2>
+<p><a href="{%url 'polium_politicians_detail' candidate.sqid%}">{{candidate.politician}}</a> is running for election in
+        <a href="{{candidate.election.get_absolute_url}}">{{candidate.election}}</a>.
+</p>
 {% endblock %}

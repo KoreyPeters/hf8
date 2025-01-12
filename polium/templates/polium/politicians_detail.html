@@ -1,0 +1,38 @@
+{% extends "polium/app_base.html" %}
+
+{% block extra_title %}{{ block.super }} | Politican | {{politician}}{% endblock %}
+
+{% block content %}
+<h1>Politician | {{politician}}</h1>
+
+<h2>Details</h2>
+
+<h2>Previous candidacies</h2>
+{% if elections %}
+<p>
+    This candidate is involved with the following elections:
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Election date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for candidate in candidacies %}
+        <!-- <tr scope="row">
+            <td><a href="{{candidate.get_absolute_url}}">{{candidate.politician}}</a></td>
+            <td>{{candidate.politician.rating}}</td>
+            <td>{{candidate.politician.created_at}}</td>
+        </tr> -->
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>
+    This candidate has not been involved with any elections on Polium.
+</p>
+{% endif %}
+{% endblock %}

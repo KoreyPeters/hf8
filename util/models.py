@@ -82,7 +82,9 @@ class Criterion(HfModel):
 
 class Survey(HfModel):
     # TODO: Add an FK to the surveyed record in the app-specific models.py
-    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    activity = models.ForeignKey(
+        Activity, blank=True, null=True, on_delete=models.CASCADE
+    )
     completed_at = DateTimeField(blank=True, null=True)
     expires_at = DateTimeField(blank=True, null=True)
     user = models.ForeignKey(
